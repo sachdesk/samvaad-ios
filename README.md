@@ -20,11 +20,11 @@ Or in `Package.swift`:
 Or CocoaPods. In your `Podfile`:
 
 ```ruby
-pod 'Samvaad', :git => 'https://github.com/sachdesk/samvaad-ios.git', :tag => '0.1.0'
+pod 'Samvaad', '~> 0.1'
 ```
 
 then run `pod install`. The pod is the same source as the Swift package (`Samvaad.podspec`
-in this repo). React Native apps using `@samvaads/react-native-widget` add the same line.
+in this repo). React Native and Flutter apps get it automatically through their plugin.
 
 Customers can attach photos and files in the chat, so add these to your app's `Info.plist`:
 
