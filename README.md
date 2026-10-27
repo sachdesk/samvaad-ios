@@ -17,6 +17,15 @@ Or in `Package.swift`:
 .product(name: "Samvaad", package: "samvaad-ios")
 ```
 
+Or CocoaPods. In your `Podfile`:
+
+```ruby
+pod 'Samvaad', :git => 'https://github.com/sachdesk/samvaad-ios.git', :tag => '0.1.0'
+```
+
+then run `pod install`. The pod is the same source as the Swift package (`Samvaad.podspec`
+in this repo). React Native apps using `@samvaads/react-native-widget` add the same line.
+
 Customers can attach photos and files in the chat, so add these to your app's `Info.plist`:
 
 - `NSCameraUsageDescription`, e.g. "Take a photo to send to Yobruh support."
