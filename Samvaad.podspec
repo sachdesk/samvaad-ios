@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary          = 'Samvaad chat for iOS apps.'
   s.description      = 'Opens your Samvaad chat full screen, keeps the customer signed in, shows an unread count and opens the chat from push notifications.'
   s.homepage         = 'https://github.com/sachdesk/samvaad-ios'
-  s.license          = { :type => 'Proprietary', :file => 'LICENSE' }
+  s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = 'Sachdesk'
   s.source           = { :git => 'https://github.com/sachdesk/samvaad-ios.git', :tag => s.version.to_s }
 

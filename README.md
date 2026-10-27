@@ -209,4 +209,4 @@ xcodebuild -scheme Samvaad -destination 'platform=iOS Simulator,name=iPhone 15' 
 
 ## License
 
-Copyright (c) 2026 Sachdesk. All rights reserved. See `LICENSE`.
+MIT. See `LICENSE`.
