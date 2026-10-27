@@ -6,8 +6,6 @@ struct WidgetOrigin: Equatable {
     let host: String
     let port: Int?
 
-    static let defaultDomain = "samvaads.com"
-
     /// Plain-http hosts that are allowed in debug builds only, for local testing.
     static let localHosts: Set<String> = ["localhost", "127.0.0.1", "10.0.2.2"]
 
@@ -47,11 +45,6 @@ struct WidgetOrigin: Equatable {
             return nil
         }
         return WidgetOrigin(scheme: scheme, host: host, port: comps.port)
-    }
-
-    /// The host used when the app does not pass one: `<tenantId>.samvaads.com`.
-    static func defaultHost(forTenant tenantId: String) -> String {
-        return "\(tenantId.lowercased()).\(defaultDomain)"
     }
 
     /// True when `url` is on this exact origin (scheme, host and port).

@@ -7,7 +7,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
-        Samvaad.configure(tenantId: "yobruh", host: "yobruh.samvaads.com")
+        Samvaad.configure(tenantId: "YOUR_WORKSPACE_ID", host: "yobruh.samvaads.com")
 
         let center = UNUserNotificationCenter.current()
         center.delegate = self

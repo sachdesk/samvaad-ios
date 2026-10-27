@@ -24,18 +24,17 @@ public enum Samvaad {
     ///
     /// - Parameters:
     ///   - tenantId: Your Samvaad tenant ID.
-    ///   - host: The host serving your chat, e.g. `yobruh.samvaads.com`. Defaults to
-    ///     `<tenantId>.samvaads.com`. Must be https; debug builds also accept
+    ///   - host: The host serving your chat, e.g. `yobruh.samvaads.com`. Required: the tenant ID
+    ///     is not part of the host. Must be https; debug builds also accept
     ///     `http://localhost:<port>` for local testing.
-    public static func configure(tenantId: String, host: String? = nil) {
+    public static func configure(tenantId: String, host: String) {
         loadStateIfNeeded()
         let id = tenantId.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !id.isEmpty else {
             SamvaadLog.logger.error("configure: tenantId is empty")
             return
         }
-        let givenHost = host?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let rawHost = givenHost.isEmpty ? WidgetOrigin.defaultHost(forTenant: id) : givenHost
+        let rawHost = host.trimmingCharacters(in: .whitespacesAndNewlines)
         guard let origin = WidgetOrigin.parse(rawHost, allowLocal: WidgetOrigin.isDebugBuild) else {
             SamvaadLog.logger.error("configure: host is not a valid https host: \(rawHost, privacy: .public)")
             return

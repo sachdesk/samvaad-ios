@@ -47,10 +47,6 @@ final class WidgetOriginTests: XCTestCase {
         XCTAssertNil(WidgetOrigin.parse("https://user:pw@yobruh.samvaads.com", allowLocal: true))
     }
 
-    func testDefaultHost() {
-        XCTAssertEqual(WidgetOrigin.defaultHost(forTenant: "Yobruh"), "yobruh.samvaads.com")
-    }
-
     func testMatchesSameOriginOnly() {
         let origin = WidgetOrigin(scheme: "https", host: "yobruh.samvaads.com", port: nil)
         XCTAssertTrue(origin.matches(URL(string: "https://yobruh.samvaads.com/embed/widget?x=1")!))

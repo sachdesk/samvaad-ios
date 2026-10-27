@@ -29,11 +29,12 @@ Call once at launch, before anything else:
 ```swift
 import Samvaad
 
-Samvaad.configure(tenantId: "yobruh", host: "yobruh.samvaads.com")
+Samvaad.configure(tenantId: "YOUR_WORKSPACE_ID", host: "yobruh.samvaads.com")
 ```
 
-`host` is optional and defaults to `<tenantId>.samvaads.com`. Pass it when your chat is
-served from another host. It must be https.
+Your workspace ID is in the install snippet under Admin → Website widget (`data-tenant-id`).
+`host` is the host serving your chat, such as `yobruh.samvaads.com` or your own domain. It
+must be https.
 
 All `Samvaad` calls are made on the main thread.
 
@@ -175,7 +176,7 @@ Debug builds also accept a local plain-http host, so you can point the app at a 
 Samvaad web app:
 
 ```swift
-Samvaad.configure(tenantId: "yobruh", host: "http://localhost:5173")
+Samvaad.configure(tenantId: "YOUR_WORKSPACE_ID", host: "http://localhost:5173")
 ```
 
 Only `localhost`, `127.0.0.1` and `10.0.2.2` are accepted over http, and only in debug
