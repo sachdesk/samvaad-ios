@@ -52,7 +52,7 @@ final class OutgoingMessageTests: XCTestCase {
         XCTAssertNotNil(script)
         XCTAssertFalse(script!.contains("\u{2028}"))
         XCTAssertFalse(script!.contains("\u{2029}"))
-        XCTAssertTrue(script!.contains(#"one two three"#))
+        XCTAssertTrue(script!.contains(#"one\u2028two\u2029three"#))
     }
 
     func testNewlinesAndNonASCIIStayValid() {
